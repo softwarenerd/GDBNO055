@@ -1,6 +1,7 @@
 import logging
 import sys
 import time
+import math
 from Adafruit_BNO055 import BNO055
 
 bno = BNO055.BNO055(serial_port='/dev/ttyAMA0', rst=18)
@@ -51,9 +52,12 @@ while True:
     # Logging.
     print('')
     print('-------------------------------------------------------------------------')
-    print(@"BNO055 Raw Data");
+    print('BNO055 Raw Data')
     print('-------------------------------------------------------------------------')
-    print('     Gyroscope (rad/s): X: {0:0.5F}, Y: {0:0.5F}, Z: {0:0.5F}, [_numberFormatterLogging stringFromNumber:@(gx)'.format(gx, gy, gz))
+    print('     Gyroscope (rad/s): X: {0:0.5F}, Y: {0:0.5F}, Z: {0:0.5F}'.format(gx * math.pi / 180.0, gy * math.pi / 180.0, gz * math.pi / 180.0))
+    print('     Gyroscope (deg/s): X: {0:0.5F}, Y: {0:0.5F}, Z: {0:0.5F}'.format(gx, gy, gz))
+    print('     Accelerometer (g): X: {0:0.5F}, Y: {0:0.5F}, Z: {0:0.5F}'.format(ax, ay, az))
+    print('     Magnetometer (uT): X: {0:0.5F}, Y: {0:0.5F}, Z: {0:0.5F}'.format(mx, my, mz))
 
     #NSLog(@"     Gyroscope (deg/s): X: %@, Y: %@, Z: %@", [_numberFormatterLogging stringFromNumber:@(RadiansToDegrees(gx))],
     #                                                      [_numberFormatterLogging stringFromNumber:@(RadiansToDegrees(gy))],
