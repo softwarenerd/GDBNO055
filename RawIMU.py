@@ -311,13 +311,13 @@ while True:
     print('-------------------------------------------------------------------------')
     print('Madgwick / BNO055 Comparison')
     print('-------------------------------------------------------------------------')
-    print('      Madgwick Roll (deg): {0:+0.5F}'.format(0.0))
+    print('      Madgwick Roll (deg): {0:+0.5F}'.format(madgwickRoll))
     print('        BNO055 Roll (deg): {0:+0.5F}'.format(roll))
     print('---------------------------------------')
-    print('     Madgwick Pitch (deg): {0:+0.5F}'.format(0.0))
+    print('     Madgwick Pitch (deg): {0:+0.5F}'.format(madgwickPitch))
     print('       BNO055 Pitch (deg): {0:+0.5F}'.format(pitch))
     print('---------------------------------------')
-    print('       Madgwick Yaw (deg): {0:+0.5F}'.format(0.0))
+    print('       Madgwick Yaw (deg): {0:+0.5F}'.format(madgwickYaw))
     print('         BNO055 Yaw (deg): {0:+0.5F}'.format(yaw))
 
     # Other values you can optionally read:
