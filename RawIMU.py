@@ -276,6 +276,8 @@ print('Accelerometer ID:   0x{0:02X}'.format(accel))
 print('Magnetometer ID:    0x{0:02X}'.format(mag))
 print('Gyroscope ID:       0x{0:02X}\n'.format(gyro))
 
+madgwick = MadgwickAHRS()
+
 print('Reading BNO055 data, press Ctrl-C to quit...')
 while True:
     # Read the Euler angles for yaw, roll, pitch (all in degrees).
@@ -293,7 +295,7 @@ while True:
     # Read magnetometer data (in micro-Teslas).
     mx,my,mz = bno.read_magnetometer()
 
-    MadgwickAHRS.update([gx, gy, gz], [ax, ay, az], [mx, my, mz])
+    madgwick.update([gx, gy, gz], [ax, ay, az], [mx, my, mz])
 
     # Logging.
     print('')
