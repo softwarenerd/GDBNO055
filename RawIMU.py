@@ -48,9 +48,37 @@ while True:
     # Read magnetometer data (in micro-Teslas).
     mx,my,mz = bno.read_magnetometer()
 
+    # Logging.
+    print('')
+    print('-------------------------------------------------------------------------'')
+    print(@"BNO055 Raw Data");
+    print('-------------------------------------------------------------------------'')
+    print('     Gyroscope (rad/s): X: {0:0.5F}, Y: {0:0.5F}, Z: {0:0.5F}, [_numberFormatterLogging stringFromNumber:@(gx)'.format(gx, gy, gz))
+
+    #NSLog(@"     Gyroscope (deg/s): X: %@, Y: %@, Z: %@", [_numberFormatterLogging stringFromNumber:@(RadiansToDegrees(gx))],
+    #                                                      [_numberFormatterLogging stringFromNumber:@(RadiansToDegrees(gy))],
+    #                                                      [_numberFormatterLogging stringFromNumber:@(RadiansToDegrees(gz))]);
+    #NSLog(@"     Accelerometer (g): X: %@, Y: %@, Z: %@", [_numberFormatterLogging stringFromNumber:@(ax * -1.0)],
+    #                                                      [_numberFormatterLogging stringFromNumber:@(ay * -1.0)],
+    #                                                      [_numberFormatterLogging stringFromNumber:@(az * -1.0)]);
+    #NSLog(@"     Magnetometer (uT): X: %@, Y: %@, Z: %@", [_numberFormatterLogging stringFromNumber:@(mx)],
+    #                                                      [_numberFormatterLogging stringFromNumber:@(my)],
+    #                                                      [_numberFormatterLogging stringFromNumber:@(mz)]);
+    #NSLog(@"-------------------------------------------------------------------------");
+    #NSLog(@"Madgwick / CoreMotion Comparison");
+    #NSLog(@"-------------------------------------------------------------------------");
+    #NSLog(@"      Madgwick Roll (deg): %@", [_numberFormatterLogging stringFromNumber:@(roll)]);
+    #NSLog(@"    CoreMotion Roll (deg): %@", [_numberFormatterLogging stringFromNumber:@(coreMotionRoll)]);
+    #NSLog(@"---------------------------------------");
+    #NSLog(@"     Madgwick Pitch (deg): %@", [_numberFormatterLogging stringFromNumber:@(pitch)]);
+    #NSLog(@"   CoreMotion Pitch (deg): %@", [_numberFormatterLogging stringFromNumber:@(coreMotionPitch)]);
+    #NSLog(@"---------------------------------------");
+    #NSLog(@"       Madgwick Yaw (deg): %@", [_numberFormatterLogging stringFromNumber:@(yaw)]);
+    #NSLog(@"     CoreMotion Yaw (deg): %@", [_numberFormatterLogging stringFromNumber:@(coreMotionYaw)]);
+    
     # Print everything out.
-    print('Heading={0:0.2F} Roll={1:0.2F} Pitch={2:0.2F}\tSys_cal={3} Gyro_cal={4} Accel_cal={5} Mag_cal={6}'.format(
-          heading, roll, pitch, sys, gyro, accel, mag))
+    #print('Heading={0:0.2F} Roll={1:0.2F} Pitch={2:0.2F}\tSys_cal={3} Gyro_cal={4} Accel_cal={5} Mag_cal={6}'.format(
+    #      heading, roll, pitch, sys, gyro, accel, mag))
 
     # Other values you can optionally read:
     # Orientation as a quaternion:
@@ -64,4 +92,4 @@ while True:
     # in meters per second squared):    
     #x,y,z = bno.read_gravity()
 
-    time.sleep(0.1)
+    time.sleep(0.2)
