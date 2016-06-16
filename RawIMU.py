@@ -50,9 +50,9 @@ while True:
 
     # Logging.
     print('')
-    print('-------------------------------------------------------------------------'')
+    print('-------------------------------------------------------------------------')
     print(@"BNO055 Raw Data");
-    print('-------------------------------------------------------------------------'')
+    print('-------------------------------------------------------------------------')
     print('     Gyroscope (rad/s): X: {0:0.5F}, Y: {0:0.5F}, Z: {0:0.5F}, [_numberFormatterLogging stringFromNumber:@(gx)'.format(gx, gy, gz))
 
     #NSLog(@"     Gyroscope (deg/s): X: %@, Y: %@, Z: %@", [_numberFormatterLogging stringFromNumber:@(RadiansToDegrees(gx))],
