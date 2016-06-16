@@ -54,35 +54,22 @@ while True:
     print('-------------------------------------------------------------------------')
     print('BNO055 Raw Data')
     print('-------------------------------------------------------------------------')
-    print('     Gyroscope (rad/s): X: {0:0.5F}, Y: {0:0.5F}, Z: {0:0.5F}'.format(gx * math.pi / 180.0, gy * math.pi / 180.0, gz * math.pi / 180.0))
-    print('     Gyroscope (deg/s): X: {0:0.5F}, Y: {0:0.5F}, Z: {0:0.5F}'.format(gx, gy, gz))
-    print('     Accelerometer (g): X: {0:0.5F}, Y: {0:0.5F}, Z: {0:0.5F}'.format(ax, ay, az))
-    print('     Magnetometer (uT): X: {0:0.5F}, Y: {0:0.5F}, Z: {0:0.5F}'.format(mx, my, mz))
+    print('     Gyroscope (rad/s): X: {0:+0.5F}, Y: {0:+0.5F}, Z: {0:+0.5F}'.format(gx * math.pi / 180.0, gy * math.pi / 180.0, gz * math.pi / 180.0))
+    print('     Gyroscope (deg/s): X: {0:+0.5F}, Y: {0:+0.5F}, Z: {0:+0.5F}'.format(gx, gy, gz))
+    print('     Accelerometer (g): X: {0:+0.5F}, Y: {0:+0.5F}, Z: {0:+0.5F}'.format(ax, ay, az))
+    print('     Magnetometer (uT): X: {0:+0.5F}, Y: {0:+0.5F}, Z: {0:+0.5F}'.format(mx, my, mz))
 
-    #NSLog(@"     Gyroscope (deg/s): X: %@, Y: %@, Z: %@", [_numberFormatterLogging stringFromNumber:@(RadiansToDegrees(gx))],
-    #                                                      [_numberFormatterLogging stringFromNumber:@(RadiansToDegrees(gy))],
-    #                                                      [_numberFormatterLogging stringFromNumber:@(RadiansToDegrees(gz))]);
-    #NSLog(@"     Accelerometer (g): X: %@, Y: %@, Z: %@", [_numberFormatterLogging stringFromNumber:@(ax * -1.0)],
-    #                                                      [_numberFormatterLogging stringFromNumber:@(ay * -1.0)],
-    #                                                      [_numberFormatterLogging stringFromNumber:@(az * -1.0)]);
-    #NSLog(@"     Magnetometer (uT): X: %@, Y: %@, Z: %@", [_numberFormatterLogging stringFromNumber:@(mx)],
-    #                                                      [_numberFormatterLogging stringFromNumber:@(my)],
-    #                                                      [_numberFormatterLogging stringFromNumber:@(mz)]);
-    #NSLog(@"-------------------------------------------------------------------------");
-    #NSLog(@"Madgwick / CoreMotion Comparison");
-    #NSLog(@"-------------------------------------------------------------------------");
-    #NSLog(@"      Madgwick Roll (deg): %@", [_numberFormatterLogging stringFromNumber:@(roll)]);
-    #NSLog(@"    CoreMotion Roll (deg): %@", [_numberFormatterLogging stringFromNumber:@(coreMotionRoll)]);
-    #NSLog(@"---------------------------------------");
-    #NSLog(@"     Madgwick Pitch (deg): %@", [_numberFormatterLogging stringFromNumber:@(pitch)]);
-    #NSLog(@"   CoreMotion Pitch (deg): %@", [_numberFormatterLogging stringFromNumber:@(coreMotionPitch)]);
-    #NSLog(@"---------------------------------------");
-    #NSLog(@"       Madgwick Yaw (deg): %@", [_numberFormatterLogging stringFromNumber:@(yaw)]);
-    #NSLog(@"     CoreMotion Yaw (deg): %@", [_numberFormatterLogging stringFromNumber:@(coreMotionYaw)]);
-    
-    # Print everything out.
-    #print('Heading={0:0.2F} Roll={1:0.2F} Pitch={2:0.2F}\tSys_cal={3} Gyro_cal={4} Accel_cal={5} Mag_cal={6}'.format(
-    #      heading, roll, pitch, sys, gyro, accel, mag))
+    print('-------------------------------------------------------------------------')
+    print('Madgwick / BNO055 Comparison')
+    print('-------------------------------------------------------------------------')
+    print('      Madgwick Roll (deg): {0:+0.5F}'.format(0.0))
+    print('        BNO055 Roll (deg): {0:+0.5F}'.format(roll))
+    print('---------------------------------------')
+    print('     Madgwick Pitch (deg): {0:+0.5F}'.format(0.0))
+    print('       BNO055 Pitch (deg): {0:+0.5F}'.format(pitch))
+    print('---------------------------------------')
+    print('       Madgwick Yaw (deg): {0:+0.5F}'.format(0.0))
+    print('         BNO055 Yaw (deg): {0:+0.5F}'.format(yaw))
 
     # Other values you can optionally read:
     # Orientation as a quaternion:
