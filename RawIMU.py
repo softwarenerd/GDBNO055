@@ -296,6 +296,7 @@ while True:
     mx,my,mz = bno.read_magnetometer()
 
     madgwick.update([gx, gy, gz], [ax, ay, az], [mx, my, mz])
+    madgwickRoll, madgwickPitch, madgwickYaw = madgwick.quaternion.to_euler_angles()
 
     # Logging.
     print('')
