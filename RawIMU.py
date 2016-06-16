@@ -293,6 +293,8 @@ while True:
     # Read magnetometer data (in micro-Teslas).
     mx,my,mz = bno.read_magnetometer()
 
+    MadgwickAHRS.update([gx, gy, gz], [ax, ay, az], [mx, my, mz])
+
     # Logging.
     print('')
     print('-------------------------------------------------------------------------')
