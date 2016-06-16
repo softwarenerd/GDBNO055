@@ -276,7 +276,7 @@ print('Accelerometer ID:   0x{0:02X}'.format(accel))
 print('Magnetometer ID:    0x{0:02X}'.format(mag))
 print('Gyroscope ID:       0x{0:02X}\n'.format(gyro))
 
-quaternion = Quaternion[1,0,0,0])
+quaternion = Quaternion([1,0,0,0])
 
 madgwick = MadgwickAHRS(sampleperiod=0.2, quaternion=quaternion, beta=0.6045997880780726)
 
