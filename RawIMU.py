@@ -276,7 +276,9 @@ print('Accelerometer ID:   0x{0:02X}'.format(accel))
 print('Magnetometer ID:    0x{0:02X}'.format(mag))
 print('Gyroscope ID:       0x{0:02X}\n'.format(gyro))
 
-madgwick = MadgwickAHRS()
+quaternion = Quaternion()
+
+madgwick = MadgwickAHRS(sampleperiod=0.2, quaternion=quaternion, beta=0.6045997880780726)
 
 print('Reading BNO055 data, press Ctrl-C to quit...')
 while True:
@@ -297,6 +299,9 @@ while True:
 
     madgwick.update([gx, gy, gz], [ax, ay, az], [mx, my, mz])
     madgwickRoll, madgwickPitch, madgwickYaw = madgwick.quaternion.to_euler_angles()
+    madgwickRoll = madgwickRoll * 180.0 / math.pi
+    madgwickPitch = madgwickPitch * 180.0 / math.pi
+    madgwickYaw = madgwickYaw * 180.0 / math.pi
 
     # Logging.
     print('')
@@ -307,7 +312,6 @@ while True:
     print('     Gyroscope (deg/s): X: {0:+0.5F}, Y: {0:+0.5F}, Z: {0:+0.5F}'.format(gx, gy, gz))
     print('     Accelerometer (g): X: {0:+0.5F}, Y: {0:+0.5F}, Z: {0:+0.5F}'.format(ax, ay, az))
     print('     Magnetometer (uT): X: {0:+0.5F}, Y: {0:+0.5F}, Z: {0:+0.5F}'.format(mx, my, mz))
-
     print('-------------------------------------------------------------------------')
     print('Madgwick / BNO055 Comparison')
     print('-------------------------------------------------------------------------')
