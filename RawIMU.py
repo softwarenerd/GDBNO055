@@ -248,7 +248,7 @@ class MadgwickAHRS:
         q += qdot * self.samplePeriod
         self.quaternion = Quaternion(q / norm(q))  # normalise quaternion
 
-bno = BNO055.BNO055(serial_port='/dev/ttyAMA0', rst=18)
+bno = BNO055.BNO055(serial_port='/dev/ttyS0', rst=18)
 
 # Enable verbose debug logging if -v is passed as a parameter.
 if len(sys.argv) == 2 and sys.argv[1].lower() == '-v':
