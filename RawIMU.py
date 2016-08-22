@@ -295,7 +295,7 @@ while True:
     ax, ay, az = bno.read_accelerometer()
 
     # Read magnetometer data (in micro-Teslas).
-    mx,my,mz = bno.read_magnetometer()
+    mx, my, mz = bno.read_magnetometer()
 
     madgwick.update([gx, gy, gz], [ax, ay, az], [mx, my, mz])
     madgwickRoll, madgwickPitch, madgwickYaw = madgwick.quaternion.to_euler_angles()
@@ -306,7 +306,7 @@ while True:
     # Logging.
     print('')
     print('-------------------------------------------------------------------------')
-    print('BNO055 Raw Data')
+    print('BNO055 Raw Data Calibration {0}'.format(sys))
     print('-------------------------------------------------------------------------')
     print('     Gyroscope (rad/s): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(gx * math.pi / 180.0, gy * math.pi / 180.0, gz * math.pi / 180.0))
     print('     Gyroscope (deg/s): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(gx, gy, gz))
