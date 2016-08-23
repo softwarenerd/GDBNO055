@@ -304,7 +304,6 @@ while True:
     madgwickYaw = madgwickYaw * 180.0 / math.pi
 
     # Logging.
-    print('')
     print('-------------------------------------------------------------------------')
     if sys == 3:
         print("BNO055 Raw Data - FULLY CALIBRATED")
