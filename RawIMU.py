@@ -306,7 +306,6 @@ while True:
     # Logging.
     print('')
     print('-------------------------------------------------------------------------')
-    print('BNO055 Raw Data Calibration {0}'.format(sys))
     if sys == 3:
         print("BNO055 Raw Data - FULLY CALIBRATED")
     elif sys == 0:
