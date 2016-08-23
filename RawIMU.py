@@ -310,14 +310,15 @@ while True:
     if sys == 3:
         print("BNO055 Raw Data - FULLY CALIBRATED")
     elif sys == 0:
-        print("BNO055 Raw Data - PARTIALLY CALIBRATED")
-    else:
         print("BNO055 Raw Data - UNCALIBRATED")
+    else:
+        print("BNO055 Raw Data - PARTIALLY CALIBRATED")
     print('-------------------------------------------------------------------------')
     print('     Gyroscope (rad/s): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(gx * math.pi / 180.0, gy * math.pi / 180.0, gz * math.pi / 180.0))
     print('     Gyroscope (deg/s): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(gx, gy, gz))
     print('     Accelerometer (g): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(ax, ay, az))
     print('     Magnetometer (uT): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(mx, my, mz))
+    print('            Total mag: ')
     print('-------------------------------------------------------------------------')
     print('BNO055 Euler')
     print('-------------------------------------------------------------------------')
