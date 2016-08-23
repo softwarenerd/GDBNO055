@@ -307,6 +307,12 @@ while True:
     print('')
     print('-------------------------------------------------------------------------')
     print('BNO055 Raw Data Calibration {0}'.format(sys))
+    if sys == 3:
+        print("BNO055 Raw Data - FULLY CALIBRATED")
+    elif sys == 0:
+        print("BNO055 Raw Data - PARTIALLY CALIBRATED")
+    else:
+        print("BNO055 Raw Data - UNCALIBRATED")
     print('-------------------------------------------------------------------------')
     print('     Gyroscope (rad/s): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(gx * math.pi / 180.0, gy * math.pi / 180.0, gz * math.pi / 180.0))
     print('     Gyroscope (deg/s): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(gx, gy, gz))
