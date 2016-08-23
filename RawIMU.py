@@ -304,30 +304,30 @@ while True:
     madgwickYaw = madgwickYaw * 180.0 / math.pi
 
     # Logging.
-    print('-------------------------------------------------------------------------')
     if sys == 3:
+        print('-------------------------------------------------------------------------')
         print("BNO055 Raw Data - FULLY CALIBRATED")
-    elif sys == 0:
-        print("BNO055 Raw Data - UNCALIBRATED")
+        print('-------------------------------------------------------------------------')
+        print('     Gyroscope (rad/s): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(gx * math.pi / 180.0, gy * math.pi / 180.0, gz * math.pi / 180.0))
+        print('     Gyroscope (deg/s): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(gx, gy, gz))
+        print('     Accelerometer (g): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(ax, ay, az))
+        print('     Magnetometer (uT): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(mx, my, mz))
+        print('            Total mag: ')
+        print('-------------------------------------------------------------------------')
+        print('BNO055 Euler')
+        print('-------------------------------------------------------------------------')
+        #print('      Madgwick Roll (deg): {0:+0.5F}'.format(madgwickRoll))
+        print('        BNO055 Roll (deg): {0:+0.5F}'.format(roll))
+        print('---------------------------------------')
+        #print('     Madgwick Pitch (deg): {0:+0.5F}'.format(madgwickPitch))
+        print('       BNO055 Pitch (deg): {0:+0.5F}'.format(pitch))
+        print('---------------------------------------')
+        #print('       Madgwick Yaw (deg): {0:+0.5F}'.format(madgwickYaw))
+        print('         BNO055 Yaw (deg): {0:+0.5F}'.format(yaw))
     else:
-        print("BNO055 Raw Data - PARTIALLY CALIBRATED")
-    print('-------------------------------------------------------------------------')
-    print('     Gyroscope (rad/s): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(gx * math.pi / 180.0, gy * math.pi / 180.0, gz * math.pi / 180.0))
-    print('     Gyroscope (deg/s): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(gx, gy, gz))
-    print('     Accelerometer (g): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(ax, ay, az))
-    print('     Magnetometer (uT): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(mx, my, mz))
-    print('            Total mag: ')
-    print('-------------------------------------------------------------------------')
-    print('BNO055 Euler')
-    print('-------------------------------------------------------------------------')
-    #print('      Madgwick Roll (deg): {0:+0.5F}'.format(madgwickRoll))
-    print('        BNO055 Roll (deg): {0:+0.5F}'.format(roll))
-    print('---------------------------------------')
-    #print('     Madgwick Pitch (deg): {0:+0.5F}'.format(madgwickPitch))
-    print('       BNO055 Pitch (deg): {0:+0.5F}'.format(pitch))
-    print('---------------------------------------')
-    #print('       Madgwick Yaw (deg): {0:+0.5F}'.format(madgwickYaw))
-    print('         BNO055 Yaw (deg): {0:+0.5F}'.format(yaw))
+        print('-------------------------------------------------------------------------')
+        print("BNO055 Raw Data - UNCALIBRATED")
+        print('-------------------------------------------------------------------------')
 
     # Other values you can optionally read:
     # Orientation as a quaternion:
