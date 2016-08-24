@@ -325,9 +325,7 @@ while True:
         #print('       Madgwick Yaw (deg): {0:+0.5F}'.format(madgwickYaw))
         print('         BNO055 Yaw (deg): {0:+0.5F}'.format(yaw))
     else:
-        print('-------------------------------------------------------------------------')
         print("BNO055 Raw Data - UNCALIBRATED")
-        print('-------------------------------------------------------------------------')
 
     # Other values you can optionally read:
     # Orientation as a quaternion:
