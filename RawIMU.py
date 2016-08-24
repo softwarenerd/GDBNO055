@@ -279,6 +279,9 @@ madgwick = MadgwickAHRS(sampleperiod=0.2, quaternion=quaternion, beta=0.60459978
 
 print('Reading BNO055 data, press Ctrl-C to quit...')
 while True:
+    
+    count = 1
+
     # Read the Euler angles for yaw, roll, pitch (all in degrees).
     yaw, roll, pitch = bno.read_euler()
 
