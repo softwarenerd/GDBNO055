@@ -304,6 +304,8 @@ while True:
     madgwickYaw = madgwickYaw * 180.0 / math.pi
 
     print('-------------------------------------------------------------------------')
+    print('Sample {0}'.format(count))
+    count += 1
     print('       System Calibration={0}'.format(sys))
     print('    Gyroscope Calibration={0}'.format(gyro))
     print('Accelerometer Calibration={0}'.format(accel))
