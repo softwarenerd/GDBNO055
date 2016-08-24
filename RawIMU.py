@@ -248,11 +248,8 @@ class MadgwickAHRS:
         q += qdot * self.samplePeriod
         self.quaternion = Quaternion(q / norm(q))  # normalise quaternion
 
+# Allocate the driver.
 bno = BNO055.BNO055(serial_port='/dev/ttyS0', rst=18)
-
-# Enable verbose debug logging if -v is passed as a parameter.
-if len(sys.argv) == 2 and sys.argv[1].lower() == '-v':
-    logging.basicConfig(level=logging.DEBUG)
 
 # Initialize the BNO055 and stop if something went wrong.
 if not bno.begin():
@@ -303,10 +300,14 @@ while True:
     madgwickPitch = madgwickPitch * 180.0 / math.pi
     madgwickYaw = madgwickYaw * 180.0 / math.pi
 
+    print('-------------------------------------------------------------------------')
+    print('       System Calibration={0}'.format(sys))
+    print('    Gyroscope Calibration={0}'.format(gyro))
+    print('Accelerometer Calibration={0}'.format(accel))
+    print(' Magnetometer Calibration={0}'.format(mag))
+
     # Logging.
     if sys == 3:
-        print('-------------------------------------------------------------------------')
-        print("BNO055 Raw Data - FULLY CALIBRATED")
         print('-------------------------------------------------------------------------')
         print('     Gyroscope (rad/s): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(gx * math.pi / 180.0, gy * math.pi / 180.0, gz * math.pi / 180.0))
         print('     Gyroscope (deg/s): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(gx, gy, gz))
