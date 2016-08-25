@@ -248,6 +248,8 @@ class MadgwickAHRS:
         q += qdot * self.samplePeriod
         self.quaternion = Quaternion(q / norm(q))  # normalise quaternion
 
+
+
 # Allocate the driver.
 bno = BNO055.BNO055(serial_port='/dev/ttyS0', rst=18)
 
@@ -264,6 +266,7 @@ print('Self test result (0x0F is normal): 0x{0:02X}'.format(self_test))
 if status == 0x01:
     print('System error: {0}'.format(error))
     print('See datasheet section 4.3.59 for the meaning.')
+    raise RuntimeError('BNO055 system error.')
 
 # Print BNO055 software revision and other diagnostic data.
 sw, bl, accel, mag, gyro = bno.get_revision()
@@ -280,7 +283,6 @@ madgwick = MadgwickAHRS(sampleperiod=0.2, quaternion=quaternion, beta=0.60459978
 print('Reading BNO055 data, press Ctrl-C to quit...')
 count = 1
 while True:
-
     # Read the Euler angles for yaw, roll, pitch (all in degrees).
     yaw, roll, pitch = bno.read_euler()
 
@@ -288,7 +290,10 @@ while True:
     sys, gyro, accel, mag = bno.get_calibration_status()
 
     # Gyroscope data (in degrees per second):
-    gx, gy, gz = bno.read_gyroscope()
+    gx_deg_sec, gy_deg_sec, gz_deg_sec = bno.read_gyroscope()
+
+    # Convert gyroscope data from degrees per second to radians per second. 
+    gx_rad_sec = 
 
     # Accelerometer data (in meters per second squared):
     ax, ay, az = bno.read_accelerometer()
@@ -344,4 +349,4 @@ while True:
     # in meters per second squared):    
     #x,y,z = bno.read_gravity()
 
-    time.sleep(1.0)
+    time.sleep(0.1)
