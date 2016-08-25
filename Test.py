@@ -100,7 +100,7 @@ def main():
         else:
             print("BNO055 Raw Data - UNCALIBRATED")
 
-
+        time.sleep(0.5)
 
 # Execute main.
 if __name__ == '__main__':
