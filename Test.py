@@ -11,7 +11,7 @@ import numbers
 def degreesToRadians(degrees):
     return degrees * math.pi / 180.0
 
-def radiansToDegrees(float radians):
+def radiansToDegrees(radians):
     return radians * 180.0 / math.pi
 
 def main():
