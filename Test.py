@@ -8,11 +8,14 @@ import numpy as np
 from numpy.linalg import norm
 import numbers
 
-def degreesToRadians(degrees):
+def degrees_to_radians(degrees):
     return degrees * math.pi / 180.0
 
-def radiansToDegrees(radians):
+def radians_to_degrees(radians):
     return radians * 180.0 / math.pi
+
+def meters_per_second_squared_to_g(meters_per_second_squared):
+    return meters_per_second_squared * 0.10193679918451
 
 def main():
     # Altert user.
@@ -64,6 +67,10 @@ def main():
         # Accelerometer data (in meters per second squared):
         ax, ay, az = bno.read_accelerometer()
 
+        ax_g = meters_per_second_squared_to_g(ax)
+        ay_g = meters_per_second_squared_to_g(ay)
+        az_g = meters_per_second_squared_to_g(az)
+
         # Read magnetometer data (in micro-Teslas).
         mx, my, mz = bno.read_magnetometer()
 
@@ -86,7 +93,7 @@ def main():
             print('-------------------------------------------------------------------------')
             print('     Gyroscope (rad/s): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(gx_rad_sec, gy_rad_sec, gz_rad_sec))
             print('     Gyroscope (deg/s): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(gx_deg_sec, gy_deg_sec, gz_deg_sec))
-            print('     Accelerometer (g): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(ax, ay, az))
+            print('     Accelerometer (g): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(ax_g, ay_g, az_g))
             print('     Magnetometer (uT): X: {0:+0.5F}, Y: {1:+0.5F}, Z: {2:+0.5F}'.format(mx, my, mz))
             print('            Total mag: ')
             print('-------------------------------------------------------------------------')
