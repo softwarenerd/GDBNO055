@@ -67,11 +67,11 @@ def main():
         # Read magnetometer data (in micro-Teslas).
         mx, my, mz = bno.read_magnetometer()
 
-        madgwick.update([gx, gy, gz], [ax, ay, az], [mx, my, mz])
-        madgwickRoll, madgwickPitch, madgwickYaw = madgwick.quaternion.to_euler_angles()
-        madgwickRoll = madgwickRoll * 180.0 / math.pi
-        madgwickPitch = madgwickPitch * 180.0 / math.pi
-        madgwickYaw = madgwickYaw * 180.0 / math.pi
+        # madgwick.update([gx, gy, gz], [ax, ay, az], [mx, my, mz])
+        # madgwickRoll, madgwickPitch, madgwickYaw = madgwick.quaternion.to_euler_angles()
+        # madgwickRoll = madgwickRoll * 180.0 / math.pi
+        # madgwickPitch = madgwickPitch * 180.0 / math.pi
+        # madgwickYaw = madgwickYaw * 180.0 / math.pi
 
         print('-------------------------------------------------------------------------')
         print('Sample {0}'.format(count))
